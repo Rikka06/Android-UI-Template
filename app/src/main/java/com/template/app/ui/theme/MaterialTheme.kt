@@ -14,7 +14,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.core.view.WindowInsetsControllerCompat
 import com.materialkolor.rememberDynamicColorScheme
-import com.template.app.ui.webui.MonetColorsProvider
 
 @Composable
 fun MaterialKernelSUTheme(
@@ -66,7 +65,6 @@ fun MaterialKernelSUTheme(
         colorScheme = colorScheme,
         motionScheme = MotionScheme.expressive(),
         content = {
-            MonetColorsProvider.UpdateCss()
             content()
         }
     )

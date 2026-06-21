@@ -76,9 +76,7 @@ class ModuleRepoViewModel(
             it.moduleId.contains(text, true) ||
                     it.moduleName.contains(text, true) ||
                     it.authors.contains(text, true) ||
-                    it.summary.contains(text, true) ||
-                    com.template.app.ui.util.HanziToPinyin.getInstance().toPinyinString(it.moduleName)
-                        .contains(text, true)
+                    it.summary.contains(text, true)
         }
     }
 

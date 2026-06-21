@@ -149,9 +149,7 @@ class ModuleViewModel(
 
         return modules.filter {
             it.id.contains(text, true) || it.name.contains(text, true) ||
-                    it.description.contains(text, true) || it.author.contains(text, true) ||
-                    com.template.app.ui.util.HanziToPinyin.getInstance().toPinyinString(it.name)
-                        .contains(text, true)
+                    it.description.contains(text, true) || it.author.contains(text, true)
         }
     }
 

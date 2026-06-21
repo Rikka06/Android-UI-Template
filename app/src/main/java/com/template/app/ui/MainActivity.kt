@@ -96,7 +96,6 @@ import com.template.app.ui.util.rememberContentReady
 import com.template.app.ui.util.rootAvailable
 import com.template.app.ui.viewmodel.MainActivityViewModel
 import com.template.app.ui.viewmodel.MainPagerConfig
-import com.template.app.ui.webui.WebUIActivity
 import top.yukonga.miuix.kmp.basic.Scaffold
 import top.yukonga.miuix.kmp.blur.layerBackdrop
 import top.yukonga.miuix.kmp.blur.rememberLayerBackdrop
@@ -410,12 +409,7 @@ private fun ShortcutIntentHandler(
                 intent.removeExtra("module_id")
             }
 
-            "module_webui" -> {
-                val moduleId = intent.getStringExtra("module_id") ?: return@LaunchedEffect
-                val webIntent = Intent(context, WebUIActivity::class.java)
-                    .setData("kernelsu://webui/$moduleId".toUri())
-                context.startActivity(webIntent)
-            }
+            
             
             else -> return@LaunchedEffect
         }

@@ -23,7 +23,6 @@ import com.template.app.ksuApp
 import com.template.app.ui.component.SearchStatus
 import com.template.app.ui.screen.superuser.GroupedApps
 import com.template.app.ui.screen.superuser.SuperUserUiState
-import com.template.app.ui.util.HanziToPinyin
 import com.template.app.ui.util.ownerNameForUid
 import com.template.app.ui.util.pickPrimary
 import java.text.Collator
@@ -173,8 +172,7 @@ class SuperUserViewModel(
         return groups.mapNotNull { group ->
             val matchedPackageNames = group.apps.filter {
                 it.label.contains(text, true) ||
-                        it.packageName.contains(text, true) ||
-                        HanziToPinyin.getInstance().toPinyinString(it.label).contains(text, true)
+                        it.packageName.contains(text, true)
             }.mapTo(linkedSetOf()) { it.packageName }
 
             if (matchedPackageNames.isEmpty()) {

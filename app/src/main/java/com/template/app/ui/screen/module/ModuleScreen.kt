@@ -2,6 +2,7 @@
 
 import android.Manifest
 import android.content.Intent
+import android.widget.Toast
 import android.os.Build
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -28,7 +29,6 @@ import com.template.app.ui.navigation3.Route
 import com.template.app.ui.screen.flash.FlashIt
 import com.template.app.ui.util.download
 import com.template.app.ui.viewmodel.ModuleViewModel
-import com.template.app.ui.webui.WebUIActivity
 
 @Composable
 fun ModulePager(
@@ -123,11 +123,7 @@ fun ModulePager(
             viewModel.toggleSortEnabledFirst()
         },
         onOpenWebUi = { module ->
-            webUILauncher.launch(
-                Intent(context, WebUIActivity::class.java)
-                    .setData("kernelsu://webui/${module.id}".toUri())
-                    .putExtra("id", module.id)
-            )
+            Toast.makeText(context, "模板文字", Toast.LENGTH_SHORT).show()
         },
         onToggleModule = { module ->
             viewModel.toggleModule(module)
